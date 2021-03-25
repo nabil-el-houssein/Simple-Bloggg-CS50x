@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Post
+{% endblock %}
+
+{% block index %}
+
+    {% if not session.user_id %}
+        <ul class="navbar-nav ml-auto mt-2 mr-2">
+            <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+            <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+        </ul>
+    {% endif %}
+
+{% endblock %}
+
+{% block main %}
+
+{% for blog in blogs %}
+
+<div class="masthead">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>{{ blog.title }}</h1>
+            <h2 class="subheading">{{ blog.subtitle }}</h2>
+            <span class="meta">Posted by
+              <a href="/profile/{{blog.username}}">{{ blog.username }}</a>
+              on {{ blog.date_posted }}</span> <br> <br>
+              {% if blog.date_updated %}
+              <span class="meta"> Updated on {{blog.date_updated}} </span>
+              {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<hr>
+
+<article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto" style="font-size: 22px; white-space: pre-wrap;">
+          {{blog.desc}}
+        </div>
+      </div>
+      {% if blog.username == username %}
+      <!-- Edit post if the post is for the current user signed in -->
+      <div class="row ">
+        <a href="/post/editBlog/{{blog.id}}"><button class="btn btn-dark">Edit post</button></a>
+      </div>
+    </div>
+    {% endif %}
+
+  </article>
+
+  <hr>
+
+
+{% endfor %}
+
+{% endblock %}

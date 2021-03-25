@@ -1,0 +1,93 @@
+body {
+  height: 100vh;
+  margin: 0;
+  font-family: 'Lora', 'Times New Roman', serif;
+}
+
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+.nav-link {
+  font-size: 20px;
+}
+
+/* Places the footer at the bottom of the page */
+body{
+  display:flex;
+  flex-direction:column;
+}
+
+footer{
+  margin-top:auto;
+}
+
+/* Change tab background color to dark and color to light when active in login.html */
+.nav-pills .nav-item .nav-link {
+    background-color: #292b2c;
+    color: #f7f7f7;
+}
+
+/* Change tab background color to light and color to dark when not active in login.html */
+.nav-pills .nav-item .nav-link:not(.active) {
+  background-color: #f7f7f7;
+  color: #292b2c;
+}
+
+a {
+  color: #292b2c;
+  transition: all 0.2s;
+}
+
+a:focus, a:hover {
+  color: #456A32;
+}
+
+.active a{
+  color: red !important;
+}
+
+/* Disable textarea resize */
+textarea {
+  resize: none;
+}
+
+/* Index styling */
+.post-title {
+  font-size: 30px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.post-subtitle {
+  font-weight: 300;
+  margin: 0 0 10px;
+}
+
+.post-meta {
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 0;
+  color: #868e96;
+}
+
+/* Post Styling */
+.masthead {
+  margin-bottom: 25px;
+}
+
+.post-heading .subheading {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 10px 0 30px;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.post-heading .meta {
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  font-family: 'Lora', 'Times New Roman', serif;
+}
